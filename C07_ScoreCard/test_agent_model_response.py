@@ -1,7 +1,9 @@
 import pytest
 from fastapi.testclient import TestClient
 
-client = TestClient(app)
+from C07_ScoreCard.agent import cat_agent
+
+client = TestClient(cat_agent)
 
 
 def evaluate_reason(vote, reason):
