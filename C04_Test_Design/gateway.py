@@ -8,7 +8,9 @@ app = FastAPI(title="SafeVote Gateway")
 CAT_API_URL = "https://api.thecatapi.com/v1/votes"
 CAT_API_KEY = "DEMO-API-KEY"  # Placeholder
 
-
+# A gateway that validates input and translates errors for the Cat API.
+# It ensures that only valid votes (1-10) are sent to the Cat API,
+# and it handles connectivity issues gracefully.
 class VoteRequest(BaseModel):
     image_id: str = Field(..., example="asdf")
     sub_id: str = Field(..., example="my-user-123")
